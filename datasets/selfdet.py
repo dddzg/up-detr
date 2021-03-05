@@ -2,6 +2,9 @@
 # UP-DETR
 # Copyright (c) Tencent, Inc. and its affiliates. All Rights Reserved.
 # ------------------------------------------------------------------------
+"""
+pre-training dataset which implements random query patch detection.
+"""
 from torch.utils.data import Dataset
 import os
 from PIL import Image
