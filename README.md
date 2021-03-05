@@ -14,7 +14,7 @@ UP-DETR inherits from DETR with the same ResNet-50 backbone, same Transformer en
 With unsupervised pre-training CNN, the whole UP-DETR model doesn't require any human annotations.
 UP-DETR achieves **43.1 AP** on COCO with 300 epochs fine-tuning. The AP of open-source version is a little higher than paper report.
 
-![DETR](.github/UP-DETR.png)
+![UP-DETR](.github/UP-DETR.png)
 
 # Model Zoo
 We provide pre-training UP-DETR and fine-tuning UP-DETR models on COCO, and plan to include more in future.
@@ -104,8 +104,8 @@ pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=Pyth
 UP-DETR follows two steps: **pre-training** and **fine-tuning**.
 We present the model pre-trained on ImageNet and then fine-tuned on COCO.
  
-##Unsupervised Pre-training
-###Data Preparation
+## Unsupervised Pre-training
+### Data Preparation
 Download and extract ILSVRC2012 train dataset.
 
 We expect the directory structure to be the following:
@@ -118,7 +118,7 @@ path/to/imagenet/
 ```
 Images can be organized disorderly because our pre-training is unsupervised.  
 
-###Pre-training
+### Pre-training
 To pr-train UP-DETR on a single node with 8 gpus for 60 epochs, run:
 ```
 python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py \
@@ -138,8 +138,8 @@ It takes about 2 hours for a epoch, so 60 epochs pre-training takes about 5 days
 
 In our further ablation experiment, we found that object query shuffle is not helpful. So, we remove it in the open-source version. 
 
-##Fine-tuning
-###Data Preparation
+## Fine-tuning
+### Data Preparation
 Download and extract [COCO 2017 dataset](https://cocodataset.org/#download) train and val dataset.
 
 The directory structure is expected as follows:
@@ -149,7 +149,7 @@ path/to/coco/
   train2017/    # train images
   val2017/      # val images
 ```
-###Fine-tuning
+### Fine-tuning
 
 To fine-tune UP-DETR with 8 gpus for 300 epochs, run:
 
