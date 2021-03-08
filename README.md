@@ -168,7 +168,7 @@ The model can also extended to panoptic segmentation, checking more details on [
 
 # Notebook
 
-We are going to provide a notebook in colab to help you get the visualization result in the paper:
+We provide a notebook in colab to get the visualization result in the paper:
 
 * [Visualization Notebook](https://colab.research.google.com/github/dddzg/up-detr/blob/master/visualization.ipynb): This notebook shows how to perform query patch detection with the pre-training model (without any annotations fine-tuning).
 

@@ -171,7 +171,8 @@ class MHAttentionMap(nn.Module):
 
         if mask is not None:
             weights.masked_fill_(mask.unsqueeze(1).unsqueeze(1), float("-inf"))
-        weights = F.softmax(weights.flatten(2), dim=-1).view(weights.size())
+        # fix a potenial bug: https://github.com/facebookresearch/detr/issues/247
+        weights = F.softmax(weights.flatten(3), dim=-1).view(weights.size())
         weights = self.dropout(weights)
         return weights
 
