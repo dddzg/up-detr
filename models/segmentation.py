@@ -50,8 +50,8 @@ class DETRsegm(nn.Module):
         src, mask = features[-1].decompose()
         assert mask is not None
         src_proj = self.detr.input_proj(src)
-        # to align with UP-DETR, we add self.query_embed.weight.unsqueeze(1).repeat(1, bs, 1) here.
-        hs, memory = self.detr.transformer(src_proj, mask, self.query_embed.weight.unsqueeze(1).repeat(1, bs, 1), pos[-1])
+        # to align with UP-DETR, we add self.detr.query_embed.weight.unsqueeze(1).repeat(1, bs, 1) here.
+        hs, memory = self.detr.transformer(src_proj, mask, self.detr.query_embed.weight.unsqueeze(1).repeat(1, bs, 1), pos[-1])
 
         outputs_class = self.detr.class_embed(hs)
         outputs_coord = self.detr.bbox_embed(hs).sigmoid()
