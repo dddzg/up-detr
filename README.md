@@ -166,6 +166,19 @@ The fine-tuning cost is exactly same to DETR, which takes 28 minutes with 8 V100
 
 The model can also extended to panoptic segmentation, checking more details on [DETR](https://github.com/facebookresearch/detr/blob/master/README.md#usage---segmentation).
 
+### Evaluation
+```
+python detr_main.py \
+    --batch_size 2 \
+    --eval \
+    --no_aux_loss \
+    --pre_norm \
+    --coco_path path/to/coco \
+    --resume path/to/save_model/checkpoint.pth
+```
+COCO val5k evaluation results of UP-DETR can be found in this [gist](https://gist.github.com/dddzg/cd0957c5643f5656f6cdc979da4d6db1).
+
+
 # Notebook
 
 We provide a notebook in colab to get the visualization result in the paper:
