@@ -22,7 +22,7 @@ The evaluation metric is same to [DETR](https://github.com/facebookresearch/detr
 
 
 Here is the UP-DETR model pre-trained on **ImageNet** without labels. 
-The CNN weight is initialized from [SwAV](https://github.com/facebookresearch/swav), which is fixed during the transformer pre-training:
+The CNN weight is initialized from [SwAV](https://github.com/facebookresearch/swav), which is fixed during the transformer **pre-training**:
 
 <table>
   <thead>
@@ -47,7 +47,7 @@ The CNN weight is initialized from [SwAV](https://github.com/facebookresearch/sw
   </tbody>
 </table>
 
-Comparision with DETR:
+The result of UP-DETR **fine-tuned** on **COCO**:
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -55,8 +55,10 @@ Comparision with DETR:
       <th align="center">backbone (pre-train)</th>
       <th align="center">epochs</th>
       <th align="center">box AP</th>
+      <th align="center">AP<sub>S</sub></th>
+      <th align="center">AP<sub>M</sub></th>
+      <th align="center">AP<sub>L</sub></th>
       <th align="center">url</th>
-      <th align="center">size</th>
     </tr>
   </thead>
   <tbody>
@@ -65,24 +67,30 @@ Comparision with DETR:
       <td align="center">R50 (Supervised)</td>
       <td align="center">500</td>
       <td align="center">42.0</td>
+      <td align="center">20.5</td>
+      <td align="center">45.8</td>
+      <td align="center">61.1</td>
       <td align="center"> - </td>
-      <td align="center"> 159Mb </td>
     </tr>
     <tr>
       <td align="center">DETR</td>
       <td align="center">R50 (SwAV)</td>
       <td align="center">300</td>
       <td align="center">42.1</td>
+      <td align="center">19.7</td>
+      <td align="center">46.3</td>
+      <td align="center">60.9</td>
       <td align="center"> - </td>
-      <td align="center">159Mb</td>
     </tr>
     <tr>
       <td align="center">UP-DETR</td>
       <td align="center">R50 (SwAV)</td>
       <td align="center">300</td>
       <td align="center"><b>43.1</b></td>
+      <td align="center"><b>21.6</b></td>
+      <td align="center"><b>46.8</b></td>
+      <td align="center"><b>62.4</b></td>
       <td align="center"> <a href="https://drive.google.com/file/d/1_YNtzKKaQbgFfd6m2ZUCO6LWpKqd7o7X/view?usp=sharing">model</a>&nbsp;|&nbsp;<a href="https://drive.google.com/file/d/1DQqveOZnMc2VaBhMzl9VilMxdeniiWXo/view?usp=sharing">logs</a> </td>
-      <td align="center">159Mb</td>
     </tr>
   </tbody>
 </table>
