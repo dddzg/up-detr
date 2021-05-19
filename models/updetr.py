@@ -84,13 +84,12 @@ class UPDETR(DETR):
         patch_feature_gt = self.avgpool(patch_feature[-1]).flatten(1)
 
         # align the dim of patch feature with object query with a linear layer
-        # pay attention to the operator claim ".view(1,n).repeat(m,1).flatten(1,2)"
-        # it converts the input from "1,2,3,4" to "1,1,1,2,2,2,3,3,3,4,4,4"
-        # if we only apply ".repeat(m,1)" operator to the input, the result is "1,2,3,4,1,2,3,4,1,2,3,4"
+        # pay attention to the difference between "torch.repeat" and "torch.repeat_interleave"
+        # it converts the input from "1,2,3,4" to "1,2,3,4,1,2,3,4,1,2,3,4" by torch.repeat
+        # "1,2,3,4" to "1,1,1,2,2,2,3,3,3,4,4,4" by torch.repeat_interleave, which is our target.
         patch_feature = self.patch2query(patch_feature_gt) \
-            .view(bs, batch_num_patches, 1, -1) \
-            .repeat(1, 1, self.num_queries // self.num_patches, 1) \
-            .flatten(1, 2) \
+            .view(bs, batch_num_patches, -1) \
+            .repeat_interleave(self.num_queries // self.num_patches, dim=1)
             .permute(1, 0, 2) \
             .contiguous()
 
