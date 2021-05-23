@@ -89,7 +89,7 @@ class UPDETR(DETR):
         # "1,2,3,4" to "1,1,1,2,2,2,3,3,3,4,4,4" by torch.repeat_interleave, which is our target.
         patch_feature = self.patch2query(patch_feature_gt) \
             .view(bs, batch_num_patches, -1) \
-            .repeat_interleave(self.num_queries // self.num_patches, dim=1)
+            .repeat_interleave(self.num_queries // self.num_patches, dim=1) \
             .permute(1, 0, 2) \
             .contiguous()
 
