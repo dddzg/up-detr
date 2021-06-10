@@ -56,6 +56,8 @@ class SelfDet(Dataset):
         img_path = self.files[item]
         img = Image.open(img_path).convert("RGB")
         w, h = img.size
+        if w<=16 or h<=16:
+            return self[(item+1)%len(self)]
         # the format of the dataset is same with COCO.
         target = {'orig_size': torch.as_tensor([int(h), int(w)]), 'size': torch.as_tensor([int(h), int(w)])}
         iscrowd = []
