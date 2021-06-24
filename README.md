@@ -2,11 +2,13 @@
 ========
 This is the official PyTorch implementation and models for [UP-DETR paper](https://arxiv.org/abs/2011.09094):
 ```
-@article{dai2020up-detr,
-  author  = {Zhigang Dai and Bolun Cai and Yugeng Lin and Junying Chen},
-  title   = {UP-DETR: Unsupervised Pre-training for Object Detection with Transformers},
-  journal = {arXiv preprint arXiv:2011.09094},
-  year    = {2020},
+@InProceedings{Dai_2021_CVPR,
+    author    = {Dai, Zhigang and Cai, Bolun and Lin, Yugeng and Chen, Junying},
+    title     = {UP-DETR: Unsupervised Pre-Training for Object Detection With Transformers},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {1601-1610}
 }
 ```
 In UP-DETR, we introduce a novel pretext named **random query patch detection** to pre-train transformers for object detection.
