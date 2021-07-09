@@ -167,7 +167,7 @@ To fine-tune UP-DETR with 8 gpus for 300 epochs, run:
 python -m torch.distributed.launch --nproc_per_node=8 --use_env detr_main.py \
     --lr_drop 200 \
     --epochs 300 \
-    --lr_backbone 5e-4 \
+    --lr_backbone 5e-5 \
     --pre_norm \
     --coco_path path/to/coco \
     --pretrain path/to/save_model/checkpoint.pth
