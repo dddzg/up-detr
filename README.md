@@ -13,8 +13,8 @@ This is the official PyTorch implementation and models for [UP-DETR paper](https
 ```
 In UP-DETR, we introduce a novel pretext named **random query patch detection** to pre-train transformers for object detection.
 UP-DETR inherits from DETR with the same ResNet-50 backbone, same Transformer encoder, decoder and same codebase.
-With unsupervised pre-training CNN, the whole UP-DETR model doesn't require any human annotations.
-UP-DETR achieves **43.1 AP** on COCO with 300 epochs fine-tuning. The AP of open-source version is a little higher than paper report.
+With unsupervised pre-training CNN, the whole UP-DETR pre-training doesn't require any human annotations.
+UP-DETR achieves **43.1 AP**([even higher](https://github.com/dddzg/up-detr/issues/8)) on COCO with 300 epochs fine-tuning. The AP of open-source version is a little higher than paper report.
 
 ![UP-DETR](.github/UP-DETR.png)
 
