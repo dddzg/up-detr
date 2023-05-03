@@ -1,6 +1,6 @@
 **UP-DETR**: Unsupervised Pre-training for Object Detection with Transformers
 ========
-This is the official PyTorch implementation and models for [UP-DETR paper](https://arxiv.org/abs/2011.09094):
+This is the official PyTorch implementation and models for [UP-DETR paper](https://arxiv.org/abs/2011.09094) and the [extended version](https://ieeexplore.ieee.org/document/9926201):
 ```
 @InProceedings{Dai_2021_CVPR,
     author    = {Dai, Zhigang and Cai, Bolun and Lin, Yugeng and Chen, Junying},
@@ -10,6 +10,17 @@ This is the official PyTorch implementation and models for [UP-DETR paper](https
     year      = {2021},
     pages     = {1601-1610}
 }
+
+@ARTICLE{9926201,
+  author={Dai, Zhigang and Cai, Bolun and Lin, Yugeng and Chen, Junying},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Unsupervised Pre-Training for Detection Transformers}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/TPAMI.2022.3216514}}
+
 ```
 In UP-DETR, we introduce a novel pretext named **random query patch detection** to pre-train transformers for object detection.
 UP-DETR inherits from DETR with the same ResNet-50 backbone, same Transformer encoder, decoder and same codebase.
